@@ -68,6 +68,35 @@ li a:hover {
   transform: scale(1.1);
 }
 
+/* ===== Section personnages ===== */
+.personnage {
+  background-color: #e6f7ff;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.personnage h2 {
+  color: #004080;
+}
+
+.personnage table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.personnage table, .personnage td {
+  border: 1px solid #3399ff;
+  padding: 8px;
+  text-align: left;
+}
+
+.personnage p {
+  font-size: 1.1em;
+}
+
 /* ===== Footer ===== */
 footer {
   text-align: center;
