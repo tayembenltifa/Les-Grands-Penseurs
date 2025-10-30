@@ -4,102 +4,7 @@
   <meta charset="UTF-8">
   <title>Les Grands Penseurs</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    /* --- Style général --- */
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #f5f6fa;
-      color: #333;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* --- Header --- */
-    header {
-      background-color: #0055aa;
-      color: white;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-
-    nav a {
-      margin-left: 20px;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ffcc00;
-    }
-
-    /* --- Bannière --- */
-    .banner {
-      background: linear-gradient(135deg, #0055aa, #00b4db);
-      color: white;
-      text-align: center;
-      padding: 80px 20px;
-    }
-
-    .banner h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .banner p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* --- Sections Matières --- */
-    .domaines {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      padding: 50px 20px;
-    }
-
-    .domaine {
-      background-color: white;
-      width: 250px;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-      text-align: center;
-    }
-
-    .domaine:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-
-    .domaine h3 {
-      color: #0055aa;
-      margin-bottom: 15px;
-    }
-
-    /* --- Footer --- */
-    footer {
-      background-color: #0055aa;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -107,11 +12,11 @@
   <header>
     <h1>Les Grands Penseurs</h1>
     <nav>
-      <a href="#">Accueil</a>
-      <a href="#">Mathématiques</a>
-      <a href="#">Physique</a>
-      <a href="#">Médecine</a>
-      <a href="#">Philosophie</a>
+      <a href="index.html">Accueil</a>
+      <a href="maths.html">Mathématiques</a>
+      <a href="physique.html">Physique</a>
+      <a href="medecine.html">Médecine</a>
+      <a href="philosophie.html">Philosophie</a>
     </nav>
   </header>
 
@@ -126,18 +31,22 @@
     <div class="domaine">
       <h3>Mathématiques</h3>
       <p>Alan Turing, Pythagore</p>
+      <a href="maths.html" class="btn">Voir plus</a>
     </div>
     <div class="domaine">
       <h3>Physique</h3>
       <p>Isaac Newton, Albert Einstein</p>
+      <a href="physique.html" class="btn">Voir plus</a>
     </div>
     <div class="domaine">
       <h3>Médecine</h3>
       <p>Avicenne</p>
+      <a href="medecine.html" class="btn">Voir plus</a>
     </div>
     <div class="domaine">
       <h3>Philosophie</h3>
       <p>Al-Kindi</p>
+      <a href="philosophie.html" class="btn">Voir plus</a>
     </div>
   </section>
 
