@@ -1,4 +1,4 @@
-/* ----- Police et couleurs générales ----- */
+/* ------------------ Police et couleurs générales ------------------ */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -7,38 +7,81 @@ body {
   color: #1a1a1a;
 }
 
-/* ----- En-tête de la page d’accueil ----- */
-.accueil-header {
+/* ------------------ Fond animé ------------------ */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  background: radial-gradient(circle at bottom, #cfe3ff 0%, #f0f4ff 100%);
+}
+
+.bubble {
+  position: absolute;
+  bottom: -150px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  animation: rise 20s infinite ease-in;
+}
+
+.bubble:nth-child(1) { width: 80px; height: 80px; left: 10%; animation-duration: 25s; }
+.bubble:nth-child(2) { width: 40px; height: 40px; left: 25%; animation-duration: 18s; animation-delay: 2s; }
+.bubble:nth-child(3) { width: 60px; height: 60px; left: 40%; animation-duration: 22s; animation-delay: 4s; }
+.bubble:nth-child(4) { width: 100px; height: 100px; left: 55%; animation-duration: 28s; animation-delay: 1s; }
+.bubble:nth-child(5) { width: 50px; height: 50px; left: 70%; animation-duration: 20s; animation-delay: 6s; }
+.bubble:nth-child(6) { width: 90px; height: 90px; left: 85%; animation-duration: 24s; animation-delay: 3s; }
+.bubble:nth-child(7) { width: 30px; height: 30px; left: 60%; animation-duration: 16s; animation-delay: 5s; }
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* ------------------ Header ------------------ */
+header, .accueil-header {
   text-align: center;
   background: linear-gradient(135deg, #003366, #0055aa);
   color: white;
-  padding: 80px 20px;
+  padding: 50px 20px;
   border-bottom: 6px solid #ffcc00;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.accueil-header h1 {
+header h1, .accueil-header h1 {
   font-size: 3rem;
   margin-bottom: 10px;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
 }
 
-.accueil-header p {
+header p, .accueil-header p {
   font-size: 1.2rem;
   max-width: 700px;
   margin: 0 auto 30px;
   line-height: 1.6;
 }
 
-.btn-decouvrir {
+/* ------------------ Boutons ------------------ */
+.btn-decouvrir, .btn-filiere, .btn-retour {
   display: inline-block;
-  padding: 12px 25px;
-  background: #ffcc00;
-  color: #003366;
-  font-weight: 600;
+  padding: 10px 20px;
   border-radius: 10px;
   text-decoration: none;
-  transition: 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-decouvrir {
+  background: #ffcc00;
+  color: #003366;
 }
 
 .btn-decouvrir:hover {
@@ -46,13 +89,40 @@ body {
   transform: scale(1.05);
 }
 
-/* ----- Section des filières ----- */
+.btn-filiere {
+  background: #003366;
+  color: white;
+  margin-top: 10px;
+}
+
+.btn-filiere:hover {
+  background: #0055aa;
+  transform: scale(1.05);
+}
+
+.btn-retour {
+  background: #ffcc00;
+  color: #003366;
+  margin: 15px auto;
+}
+
+.btn-retour:hover {
+  background: #ffe680;
+  transform: scale(1.05);
+}
+
+/* ------------------ Main et filières ------------------ */
+main, .accueil-main {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
 .accueil-main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  padding: 50px 20px;
 }
 
 .filiere {
@@ -74,29 +144,53 @@ body {
   color: #003366;
 }
 
-.btn-filiere {
-  display: inline-block;
+/* ------------------ Section personnages ------------------ */
+.personnage {
+  background-color: #e6f7ff;
+  padding: 20px;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.personnage h2 {
+  color: #004080;
+  text-align: center;
+}
+
+.personnage img {
+  display: block;
+  margin: 15px auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.personnage table {
+  width: 100%;
+  border-collapse: collapse;
   margin-top: 10px;
-  padding: 10px 20px;
-  background: #003366;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.3s;
 }
 
-.btn-filiere:hover {
-  background: #0055aa;
-  transform: scale(1.05);
+.personnage table, .personnage td {
+  border: 1px solid #3399ff;
+  padding: 8px;
+  text-align: left;
 }
 
-/* ----- Pied de page ----- */
+.personnage p {
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+/* ------------------ Footer ------------------ */
 footer {
   text-align: center;
-  padding: 15px;
-  background: #003366;
+  padding: 20px;
+  background-color: #003366;
   color: white;
-  font-size: 0.9rem;
-  margin-top: 40px;
-  box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: 50px;
+  box-shadow: 0 -4px 6px rgba(0,0,0,0.2);
+  font-size: 0.95rem;
 }
