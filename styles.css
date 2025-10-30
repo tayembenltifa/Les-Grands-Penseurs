@@ -1,8 +1,10 @@
+/* 🎨 STYLE GLOBAL */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background-color: #f5f6fa;
   color: #333;
+  overflow-x: hidden;
 }
 
 a {
@@ -10,7 +12,7 @@ a {
   color: inherit;
 }
 
-/* HEADER */
+/* 🔷 HEADER */
 header {
   background-color: #0055aa;
   color: white;
@@ -18,33 +20,46 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  animation: slideDown 1s ease;
 }
 
 header h1 {
   margin: 0;
   font-size: 2rem;
+  letter-spacing: 1px;
 }
 
 nav a {
   margin-left: 20px;
   font-weight: 600;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.3s;
 }
 
 nav a:hover {
   color: #ffcc00;
+  transform: scale(1.1);
 }
 
-/* BANNIÈRE */
+/* 🌀 ANIMATION DU HEADER */
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* 🌈 BANNIÈRE */
 .banner {
   background: linear-gradient(135deg, #0055aa, #00b4db);
   color: white;
   text-align: center;
-  padding: 80px 20px;
+  padding: 90px 20px;
+  animation: fadeIn 1.5s ease;
 }
 
 .banner h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 20px;
 }
 
@@ -52,15 +67,16 @@ nav a:hover {
   font-size: 1.2rem;
   max-width: 600px;
   margin: 0 auto;
+  opacity: 0.9;
 }
 
-/* DOMAINES + PERSONNAGES */
+/* ✨ DOMAINES */
 .domaines {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
-  padding: 50px 20px;
+  padding: 60px 20px;
 }
 
 .domaine, .personnage {
@@ -69,21 +85,29 @@ nav a:hover {
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   text-align: center;
+  opacity: 0;
+  animation: fadeUp 1s forwards;
 }
 
+.domaine:nth-child(1) { animation-delay: 0.2s; }
+.domaine:nth-child(2) { animation-delay: 0.4s; }
+.domaine:nth-child(3) { animation-delay: 0.6s; }
+.domaine:nth-child(4) { animation-delay: 0.8s; }
+
 .domaine:hover, .personnage:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 .domaine h3, .personnage h3 {
   color: #0055aa;
   margin-bottom: 15px;
+  font-weight: 600;
 }
 
-/* BOUTONS */
+/* 🚀 BOUTONS */
 .btn {
   display: inline-block;
   background-color: #0055aa;
@@ -91,26 +115,45 @@ nav a:hover {
   padding: 10px 15px;
   border-radius: 10px;
   margin-top: 10px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .btn:hover {
   background-color: #ffcc00;
   color: black;
+  transform: scale(1.05);
 }
 
-/* IMAGES DES PERSONNAGES */
+/* 🖼️ IMAGES DES PERSONNAGES */
 .personnage img {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 10px;
 }
 
-/* FOOTER */
+/* 🦶 FOOTER */
 footer {
   background-color: #0055aa;
   color: white;
   text-align: center;
   padding: 20px;
   margin-top: 50px;
+  animation: fadeIn 2s ease;
+}
+
+/* 🌟 ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
