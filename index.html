@@ -2,59 +2,148 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Les Grands Penseurs</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* --- Style général --- */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f6fa;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* --- Header --- */
+    header {
+      background-color: #0055aa;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    /* --- Bannière --- */
+    .banner {
+      background: linear-gradient(135deg, #0055aa, #00b4db);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .banner h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .banner p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* --- Sections Matières --- */
+    .domaines {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 50px 20px;
+    }
+
+    .domaine {
+      background-color: white;
+      width: 250px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+
+    .domaine:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .domaine h3 {
+      color: #0055aa;
+      margin-bottom: 15px;
+    }
+
+    /* --- Footer --- */
+    footer {
+      background-color: #0055aa;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Fond animé -->
-  <div class="background">
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-  </div>
-
-  <header class="accueil-header">
-    <h1>✨ Les Grands Penseurs ✨</h1>
-    <p>Bienvenue sur un site dédié aux esprits brillants qui ont façonné le monde du savoir.  
-       Découvrez les savants, philosophes, médecins et mathématiciens qui ont marqué l’histoire.</p>
-    <a href="#filières" class="btn-decouvrir">Découvrir les domaines</a>
+  <!-- Header -->
+  <header>
+    <h1>Les Grands Penseurs</h1>
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#">Mathématiques</a>
+      <a href="#">Physique</a>
+      <a href="#">Médecine</a>
+      <a href="#">Philosophie</a>
+    </nav>
   </header>
 
-  <main id="filières" class="accueil-main">
-    <section class="filiere">
-      <h2>🧮 Mathématiques</h2>
-      <p>Explorez les découvertes de <strong>Alan Turing</strong> et <strong>Pythagore</strong> qui ont révolutionné la logique et la géométrie.</p>
-      <a href="math.html" class="btn-filiere">Voir la page</a>
-    </section>
+  <!-- Bannière -->
+  <section class="banner">
+    <h2>Découvrez les esprits qui ont marqué l'histoire</h2>
+    <p>Explorez les biographies et réalisations de grands penseurs en mathématiques, physique, médecine et philosophie.</p>
+  </section>
 
-    <section class="filiere">
-      <h2>🧪 Physique</h2>
-      <p>Découvrez les travaux de <strong>Isaac Newton</strong> et <strong>Albert Einstein</strong> qui ont transformé notre vision de l’univers.</p>
-      <a href="physique.html" class="btn-filiere">Voir la page</a>
-    </section>
+  <!-- Domaines -->
+  <section class="domaines">
+    <div class="domaine">
+      <h3>Mathématiques</h3>
+      <p>Alan Turing, Pythagore</p>
+    </div>
+    <div class="domaine">
+      <h3>Physique</h3>
+      <p>Isaac Newton, Albert Einstein</p>
+    </div>
+    <div class="domaine">
+      <h3>Médecine</h3>
+      <p>Avicenne</p>
+    </div>
+    <div class="domaine">
+      <h3>Philosophie</h3>
+      <p>Al-Kindi</p>
+    </div>
+  </section>
 
-    <section class="filiere">
-      <h2>💊 Médecine</h2>
-      <p>Plongez dans les avancées de <strong>Avicenne</strong>, pionnier de la médecine moderne et du savoir scientifique.</p>
-      <a href="medecine.html" class="btn-filiere">Voir la page</a>
-    </section>
-
-    <section class="filiere">
-      <h2>🧠 Philosophie</h2>
-      <p>Découvrez la sagesse et la pensée profonde d’<strong>Al-Kindi</strong>, un penseur majeur du monde arabe médiéval.</p>
-      <a href="philosophie.html" class="btn-filiere">Voir la page</a>
-    </section>
-  </main>
-
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Les Grands Penseurs — Créé avec passion par Tayem Benltifa 💡</p>
+    © 2025 Les Grands Penseurs — Réalisé par Tayem Benltifa
   </footer>
 
 </body>
